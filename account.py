@@ -119,10 +119,14 @@ def app():
                     with st.spinner('Redirecting to main page...'):
                         time.sleep(3)
                     st.success('Done!')
+                    st.rerun()
                 except:
                     st.warning("Account login failed!")
-                    time.sleep(1)
-                st.rerun()
+                    st.button("Forgot Password)
+                        if st.button("Forgot Password):
+                            st.session_state["page"] = "reset"
+                            time.sleep(1)
+                            st.rerun()
         elif register:
             st.session_state["page"] = "register"
             st.rerun()
