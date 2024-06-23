@@ -13,3 +13,4 @@ pyrebase4
 streamlit-extras
 streamlit-image-comparison
 streamlit-option-menu
+pyngrok
