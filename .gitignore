@@ -1,0 +1,27 @@
+# Ignore Python cache files
+__pycache__/
+*.py[cod]
+
+# Ignore virtual environment folder
+venv/
+env/
+
+# Ignore environment variables file
+.env
+
+# Ignore log files
+*.log
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore IDE-specific files
+.vscode/
+.idea/
+
+# Ignore node_modules (if you have a frontend in your project)
+node_modules/
+
+# Ignore .streamlit folder except specific config file
+.streamlit/*
+!.streamlit/config.toml
