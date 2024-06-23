@@ -1,0 +1,9 @@
+[server]
+maxUploadSize = 2
+
+[theme]
+primaryColor="#fca311"
+backgroundColor="#000000"
+secondaryBackgroundColor="#14213d"
+textColor="#ffffff"
+font="monospace"
