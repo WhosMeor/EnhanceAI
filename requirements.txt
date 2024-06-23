@@ -12,3 +12,4 @@ MY-basicsr==1.4.2
 pyrebase4
 streamlit-extras
 streamlit-image-comparison
+streamlit-option-menu
