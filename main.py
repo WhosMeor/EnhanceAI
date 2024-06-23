@@ -16,7 +16,7 @@ class MultiApp:
             app = option_menu(
                 menu_title='EnhanceAI',
                 options=['Home','Account','Enhancement'],
-                icons=['house','person-circle','cpu'],
+                icons=['house-fill','person-circle','cpu'],
                 menu_icon='robot',
                 default_index=0,
                 styles={"container": {"padding": "5!important","background-color":'#000000'},
