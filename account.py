@@ -122,8 +122,8 @@ def app():
                     st.rerun()
                 except:
                     st.warning("Account login failed!")
-                    st.button("Forgot Password)
-                        if st.button("Forgot Password):
+                    st.button("Forgot Password")
+                        if st.button("Forgot Password"):
                             st.session_state["page"] = "reset"
                             time.sleep(1)
                             st.rerun()
