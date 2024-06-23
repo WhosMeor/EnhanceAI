@@ -93,10 +93,12 @@ def app():
         email = st.text_input("Email")
         password = st.text_input("Password", type="password")
 
-        col1, col2 = st.columns(2)
+        col1, col2, col3= st.columns(3)
         with col1:
             login = st.button("Login", use_container_width=True)
         with col2:
+            forgot = st.button("Forgot Password", use_container_width=True)
+        with col3:
             register = st.button("Register", use_container_width=True)
 
         if login:
@@ -122,11 +124,9 @@ def app():
                     st.rerun()
                 except:
                     st.warning("Account login failed!")
-                    st.button("Forgot Password")
-                    if st.button("Forgot Password"):
-                        st.session_state["page"] = "reset"
-                        time.sleep(1)
-                        st.rerun()
+        elif forgot:
+            st.session_state["page"] = "forgot"
+            st.rerun()
         elif register:
             st.session_state["page"] = "register"
             st.rerun()
@@ -165,6 +165,42 @@ def app():
                 st.rerun()
         elif back:
             st.session_state["page"] = "mainpage"
+            st.rerun()
+
+    def FORGOT():
+        st.title(":orange[EnhanceAI] 🐱‍💻✨")
+        st.subheader("Password Reset")
+        email = st.text_input("Email")
+
+        col1, col2 = st.columns(2)
+        with col1:
+            reset = st.button("Reset Password", use_container_width=True)
+        with col2:
+            back = st.button("Back", use_container_width=True)
+
+        if reset:
+            if email == "":
+                st.warning("Enter Email!")
+            elif email != "":
+                try:
+                    auth.send_password_reset_email(email)
+                    st.success("Password reset email sent successfully!")
+                    st.session_state["page"] = "login"
+                    rain(
+                        emoji="📩",
+                        font_size=54,
+                        falling_speed=5,
+                        animation_length="infinite",
+                    )
+                    with st.spinner('Redirecting to main page...'):
+                        time.sleep(1)
+                    st.success('Done!')
+                except:
+                    st.warning("Password reset failed!")
+                    time.sleep(1)
+                st.rerun()
+        elif back:
+            st.session_state["page"] = "login"
             st.rerun()
 
     def DELETE():
@@ -234,6 +270,8 @@ def app():
         MAINPAGE()
     elif st.session_state["page"] == "reset":
         RESET()
+    elif st.session_state["page"] == "forgot":
+        FORGOT()
     elif st.session_state["page"] == "delete":
         DELETE()
     elif st.session_state["page"] == "logout":
