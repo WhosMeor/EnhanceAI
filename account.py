@@ -117,7 +117,7 @@ def app():
                         animation_length="infinite",
                     )
                     with st.spinner('Redirecting to main page...'):
-                        time.sleep(1)
+                        time.sleep(3)
                     st.success('Done!')
                 except:
                     st.warning("Account login failed!")
