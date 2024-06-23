@@ -123,10 +123,10 @@ def app():
                 except:
                     st.warning("Account login failed!")
                     st.button("Forgot Password")
-                        if st.button("Forgot Password"):
-                            st.session_state["page"] = "reset"
-                            time.sleep(1)
-                            st.rerun()
+                    if st.button("Forgot Password"):
+                        st.session_state["page"] = "reset"
+                        time.sleep(1)
+                        st.rerun()
         elif register:
             st.session_state["page"] = "register"
             st.rerun()
