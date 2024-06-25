@@ -67,7 +67,8 @@ def app():
                 st.warning("Password doesn't match!")
             elif password == confirm_password:
                 try:
-                    auth.create_user_with_email_and_password(email, password)
+                    user = auth.create_user_with_email_and_password(email, password)
+                    auth.send_email_verification(user['idToken'])
                     st.success("Account registered succesfully!")
                     st.session_state["page"] = "login"
                     rain(
