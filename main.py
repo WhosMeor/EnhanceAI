@@ -23,7 +23,6 @@ class MultiApp:
                         "icon": {"color": "white", "font-size": "23px"}, 
                         "nav-link": {"color":"white","font-size": "20px", "text-align": "left", "margin":"0px", "--hover-color": "#14213D"},
                         "nav-link-selected": {"background-color": "#FCA311"},}
-                
                 )
         if app == "Home":
             home.app()
